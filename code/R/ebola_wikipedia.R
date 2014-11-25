@@ -9,16 +9,16 @@ ebola <- readHTMLTable("http://en.wikipedia.org/wiki/Ebola_virus_epidemic_in_Wes
 # thankfully our table has a name; it is table #5
 # NOT AS OF 2014-09-26! There are now 2 tables and they are 7, 8.
 # NOT AS OF 2014-10-02! There are now 2 tables and they are 8, 9.
-ebola.current <- ebola[[7]]
-ebola.archive <- ebola[[9]]
+ebola.current <- ebola[[5]]
+ebola.archive <- ebola[[7]]
 
 # again, manual examination reveals that we want rows 2-end and columns 1-3
 ebola.new <- rbind(ebola.current[2:nrow(ebola.current), 1:3], ebola.archive[2:nrow(ebola.archive), 1:3])
 colnames(ebola.new) <- c("date", "cases", "deaths")
  
 # need to fix up a couple of cases that contain text other than the numbers
-ebola.new$cases[nrow(ebola.new)-43]  <- "759"
-ebola.new$deaths[nrow(ebola.new)-43] <- "467"
+#ebola.new$cases[nrow(ebola.new)-43]  <- "759"
+#ebola.new$deaths[nrow(ebola.new)-43] <- "467"
  
 # get rid of the commas; convert to numeric
 ebola.new$cases  <- gsub(",", "", ebola.new$cases)
