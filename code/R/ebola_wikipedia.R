@@ -2,7 +2,7 @@ library(XML)
 library(ggplot2)
 library(reshape2)
 
-setwd("~/Dropbox/projects/ebola")
+setwd("~/Dropbox/projects/github_projects/ebola")
 # get all tables on the page
 ebola <- readHTMLTable("http://en.wikipedia.org/wiki/Ebola_virus_epidemic_in_West_Africa", 
                   stringsAsFactors = FALSE)
