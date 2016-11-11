@@ -1,6 +1,6 @@
 library(rvest)
 library(ggplot2)
-library(dplyr)
+library(tidyr)
 
 setwd("~/Dropbox/projects/github_projects/ebola")
 # get the table of cases
